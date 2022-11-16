@@ -14,6 +14,8 @@ android {
         versionCode 1
         versionName "1.0"
 
+        manifestPlaceholders = [appAuthRedirectScheme: 'io.identityserver.demo']
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -35,7 +37,6 @@ android {
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'com.spotify.android:auth:2.0.2'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
