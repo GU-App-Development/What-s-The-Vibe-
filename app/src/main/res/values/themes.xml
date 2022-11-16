@@ -13,4 +13,19 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="padding">
+        <item name="android:paddingTop">@dimen/normal_padding</item>
+        <item name="android:paddingRight">@dimen/normal_padding</item>
+        <item name="android:paddingLeft">@dimen/normal_padding</item>
+        <item name="android:paddingBottom">@dimen/normal_padding</item>
+        <item name="android:layout_marginTop">100dp</item>
+    </style>
+
+    <style name="welcome_text">
+        <item name="android:textSize">50sp</item>
+    </style>
+
+    <style name="begin_button_text">
+        <item name="android:textSize">30sp</item>
+    </style>
 </resources>
