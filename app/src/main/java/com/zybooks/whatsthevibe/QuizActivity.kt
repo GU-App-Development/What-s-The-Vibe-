@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.RadioGroup
+import android.widget.TextView
 import androidx.core.view.children
 
 class QuizActivity : AppCompatActivity() {
@@ -13,15 +14,21 @@ class QuizActivity : AppCompatActivity() {
     private lateinit var answerRadioGroup : RadioGroup
     private lateinit var nextButton : Button
     private lateinit var currentAnswer : String
+    private lateinit var QuestionText : TextView
     private var selectedAnswers = arrayListOf<String>()
+    private var nextButtonClicks : Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz)
+        QuestionText.setText(Questions[0])
+        QuestionText = findViewById(R.id.question_text)
 
         nextButton = findViewById(R.id.next_button)
         nextButton.setOnClickListener{view: View ->
             // push answer info in onNextClick!!
+            nextButtonClicks++
+            QuestionText.setText(Questions[nextButtonClicks])
             onNextClick(view)
         }
 
@@ -34,20 +41,17 @@ class QuizActivity : AppCompatActivity() {
 
     private fun onNextClick(view: View){
         // make sure an answer is selected before we refresh activity!
-        val isAnswerSelected = false
+            nextQuestion(view)
 
-        if (isAnswerSelected && currentAnswer != null){
-            // resets activity
-            selectedAnswers.add(currentAnswer)
-            if (selectedAnswers.count() == 10){
+            if (nextButtonClicks == 10){
                 // if they have answered 10 questions, then start the results activity
                 val intent = Intent(this, ResultActivity::class.java)
                 startActivity(intent)
             }
-            // refreshes activity
-            finish()
-            startActivity(getIntent())
-        }
+            else{
+                nextQuestion(view)
+            }
+
     }
 
     private fun onAnswerSelected(view: View) {
@@ -59,5 +63,12 @@ class QuizActivity : AppCompatActivity() {
             else -> "No Answer"
         }
     }
+
+
+    private fun nextQuestion(view: View){
+        selectedAnswers.add(currentAnswer)
+        // reset
+    }
+
 
 }
