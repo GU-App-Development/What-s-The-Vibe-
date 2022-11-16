@@ -3,4 +3,10 @@
     <string name="welcome_message">What\'s The Vibe?</string>
     <string name="begin_button_text">Begin</string>
     <string name="share_button_text">SHARE</string>
+    <string name="question_text">Base Question Text</string>
+    <string name="next_button_text">Next</string>
+    <string name="answer1_text">Answer1</string>
+    <string name="answer2_text">Answer2</string>
+    <string name="answer3_text">Answer3</string>
+    <string name="answer4_text">Answer4</string>
 </resources>

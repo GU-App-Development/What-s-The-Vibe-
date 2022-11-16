@@ -15,7 +15,8 @@
         android:layout_height="wrap_content"
         android:text="@string/welcome_message"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="100dp"/>
 
     <Button
         android:id="@+id/begin_button"
@@ -26,8 +27,7 @@
         app:layout_constraintTop_toBottomOf="@id/welcome_text"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="150dp"
-        android:onClick="Quiz_Activity"/>
+        android:layout_marginTop="150dp"/>
     <Button
         android:id="@+id/share_button"
         style="@style/begin_button_text"

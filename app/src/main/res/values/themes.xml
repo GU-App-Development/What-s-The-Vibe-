@@ -18,7 +18,6 @@
         <item name="android:paddingRight">@dimen/normal_padding</item>
         <item name="android:paddingLeft">@dimen/normal_padding</item>
         <item name="android:paddingBottom">@dimen/normal_padding</item>
-        <item name="android:layout_marginTop">100dp</item>
     </style>
 
     <style name="welcome_text">
@@ -28,4 +27,15 @@
     <style name="begin_button_text">
         <item name="android:textSize">30sp</item>
     </style>
+
+    <style name="question_text">
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="question_buttons">
+        <item name="android:textSize">18sp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+    </style>
+
 </resources>
