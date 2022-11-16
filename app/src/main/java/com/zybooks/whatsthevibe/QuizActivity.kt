@@ -39,6 +39,12 @@ class QuizActivity : AppCompatActivity() {
         if (isAnswerSelected && currentAnswer != null){
             // resets activity
             selectedAnswers.add(currentAnswer)
+            if (selectedAnswers.count() == 10){
+                // if they have answered 10 questions, then start the results activity
+                val intent = Intent(this, ResultActivity::class.java)
+                startActivity(intent)
+            }
+            // refreshes activity
             finish()
             startActivity(getIntent())
         }

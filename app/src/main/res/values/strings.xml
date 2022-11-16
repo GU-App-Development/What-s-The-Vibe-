@@ -9,4 +9,5 @@
     <string name="answer2_text">Answer2</string>
     <string name="answer3_text">Answer3</string>
     <string name="answer4_text">Answer4</string>
+    <string name="result_text">This is the Vibe!</string>
 </resources>
