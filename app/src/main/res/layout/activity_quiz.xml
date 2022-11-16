@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/padding"
+    android:background="@color/purple_200"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".QuizActivity"
@@ -13,6 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/question_text"
+        android:textColor="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -31,12 +33,14 @@
         <RadioButton android:id="@+id/answer1"
             style="@style/question_buttons"
             android:layout_width="match_parent"
+            android:textColor="@color/white"
             android:layout_height="wrap_content"
             android:text="@string/answer1_text"/>
 
         <RadioButton android:id="@+id/answer2"
             style="@style/question_buttons"
             android:layout_width="match_parent"
+            android:textColor="@color/white"
             android:layout_height="wrap_content"
             android:text="@string/answer2_text"
             />
@@ -45,12 +49,14 @@
             style="@style/question_buttons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:text="@string/answer3_text"/>
 
         <RadioButton android:id="@+id/answer4"
             style="@style/question_buttons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:text="@string/answer4_text"
             android:textSize="18sp"/>
 
