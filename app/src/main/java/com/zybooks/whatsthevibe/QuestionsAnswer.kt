@@ -64,7 +64,6 @@ class QuestionsAnswer{
         Questions.add("Do you need motivation right now?")
         Questions.add("Do you like to sing along to music?")
         Questions.add("What genre are you feeling right now?")
-        Questions.add("What genre are you feeling right now?")
         Questions.add("Are you feeling sad right now?")
         Questions.add("How old are you?")
         Questions.add("Are you feeling like listening to holiday music?")

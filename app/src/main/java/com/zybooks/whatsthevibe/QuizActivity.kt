@@ -4,10 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.RadioButton
-import android.widget.RadioGroup
-import android.widget.TextView
+import android.widget.*
 import androidx.core.view.children
 
 class QuizActivity : AppCompatActivity() {
@@ -35,24 +32,16 @@ class QuizActivity : AppCompatActivity() {
         Answer2 = findViewById(R.id.answer2)
         Answer3 = findViewById(R.id.answer3)
         Answer4 = findViewById(R.id.answer4)
-        if (nextButtonClicks == 0){
-            QuestionText.setText(QuestionsAnswers.Questions[0])
-            Answer1.setText(QuestionsAnswers.AllAnswers[0][0])
-            Answer2.setText(QuestionsAnswers.AllAnswers[0][1])
-            Answer3.setText(QuestionsAnswers.AllAnswers[0][2])
-            Answer4.setText(QuestionsAnswers.AllAnswers[0][3])
-        }
 
+        QuestionText.setText(QuestionsAnswers.Questions[0])
+        Answer1.setText(QuestionsAnswers.AllAnswers[0][0])
+        Answer2.setText(QuestionsAnswers.AllAnswers[0][1])
+        Answer3.setText(QuestionsAnswers.AllAnswers[0][2])
+        Answer4.setText(QuestionsAnswers.AllAnswers[0][3])
 
         nextButton = findViewById(R.id.next_button)
         nextButton.setOnClickListener{view: View ->
             // push answer info in onNextClick!!
-            nextButtonClicks++
-            QuestionText.setText(QuestionsAnswers.Questions[nextButtonClicks])
-            Answer1.setText(QuestionsAnswers.AllAnswers[nextButtonClicks][0])
-            Answer2.setText(QuestionsAnswers.AllAnswers[nextButtonClicks][1])
-            Answer3.setText(QuestionsAnswers.AllAnswers[nextButtonClicks][2])
-            Answer4.setText(QuestionsAnswers.AllAnswers[nextButtonClicks][3])
             onNextClick(view)
         }
 
@@ -65,17 +54,23 @@ class QuizActivity : AppCompatActivity() {
 
     private fun onNextClick(view: View){
         // make sure an answer is selected before we refresh activity!
-            nextQuestion(view)
+        nextButtonClicks++
+        try {
+            QuestionText.setText(QuestionsAnswers.Questions[nextButtonClicks])
+            Answer1.setText(QuestionsAnswers.AllAnswers[nextButtonClicks][0])
+            Answer2.setText(QuestionsAnswers.AllAnswers[nextButtonClicks][1])
+            Answer3.setText(QuestionsAnswers.AllAnswers[nextButtonClicks][2])
+            Answer4.setText(QuestionsAnswers.AllAnswers[nextButtonClicks][3])
 
-            if (nextButtonClicks == 10){
-                // if they have answered 10 questions, then start the results activity
-                val intent = Intent(this, ResultActivity::class.java)
-                startActivity(intent)
+            if (nextButtonClicks == 9){
+                nextButton.setText("Get Results!")
             }
-            else{
-                nextQuestion(view)
-            }
-
+        }
+        catch(e: Exception){
+            Toast.makeText(this, "WE HEREEE", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, ResultActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun onAnswerSelected(view: View) {
