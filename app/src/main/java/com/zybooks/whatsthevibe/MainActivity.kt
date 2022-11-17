@@ -9,7 +9,6 @@ import android.widget.Button
 class MainActivity : AppCompatActivity() {
 
     private lateinit var beginButton : Button
-    private lateinit var shareButton : Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +20,5 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, QuizActivity::class.java)
             startActivity(intent)
         }
-
-        shareButton = findViewById(R.id.share_button)
     }
 }

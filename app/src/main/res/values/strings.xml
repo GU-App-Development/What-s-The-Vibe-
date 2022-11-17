@@ -10,4 +10,5 @@
     <string name="answer3_text">Answer3</string>
     <string name="answer4_text">Answer4</string>
     <string name="result_text">This is the Vibe!</string>
+    <string name="restart_button_text">Restart</string>
 </resources>

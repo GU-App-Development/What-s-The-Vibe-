@@ -23,6 +23,7 @@
 
 
     <TextView
+        android:id="@+id/song_name_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
@@ -31,7 +32,30 @@
         app:layout_constraintTop_toBottomOf="@id/result_text"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="100dp"
         />
+    <Button
+        android:id="@+id/share_button"
+        style="@style/begin_button_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/share_button_text"
+        app:layout_constraintTop_toBottomOf="@id/song_name_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="50dp"/>
+
+    <Button
+        android:id="@+id/restart_button"
+        style="@style/begin_button_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/restart_button_text"
+        app:layout_constraintTop_toBottomOf="@id/share_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="20dp"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

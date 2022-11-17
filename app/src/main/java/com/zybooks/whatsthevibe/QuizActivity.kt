@@ -67,7 +67,6 @@ class QuizActivity : AppCompatActivity() {
             }
         }
         catch(e: Exception){
-            Toast.makeText(this, "WE HEREEE", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, ResultActivity::class.java)
             startActivity(intent)
         }
