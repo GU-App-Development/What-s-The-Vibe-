@@ -1,4 +1,4 @@
-# README final project cpsc333
+# README Final Project CPSC333
 
 ### Project name: 
 "What's the Vibe?" App
@@ -18,5 +18,5 @@ Katie Imhof (kimhof@zagmail.gonzaga.edu)
 Adam White (awhite8@zagmail.gonzaga.edu)
 
 ### Contributors:
-Katie Imhof
+Katie Imhof<br>
 Adam White
