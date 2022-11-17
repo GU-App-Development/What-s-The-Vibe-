@@ -13,8 +13,8 @@ If you would like to use this app, as of right now, you can just clone the repos
 app to your benefit.
 
 ### Getting Help:
-If you are having troubles with using our app, you can reach the authors at their emails that are provided. 
-Katie Imhof (kimhof@zagmail.gonzaga.edu)
+If you are having troubles with using our app, you can reach the authors at their emails that are provided.<br>
+Katie Imhof (kimhof@zagmail.gonzaga.edu)<br>
 Adam White (awhite8@zagmail.gonzaga.edu)
 
 ### Contributors:
