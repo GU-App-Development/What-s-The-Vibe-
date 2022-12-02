@@ -35,7 +35,7 @@ android {
 }
 
 dependencies {
-    implementation "com.adamratzman:spotify-api-kotlin-core:3.8.8"
+    implementation 'com.github.kaaes:spotify-web-api-android:0.4.1'
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.7.0'
