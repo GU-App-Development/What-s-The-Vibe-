@@ -4,9 +4,11 @@
 
     <queries>
         <intent>
-            <action android:name="android.intent.action.Send"/>
+            <action android:name="android.intent.action.Send" />
         </intent>
     </queries>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -19,9 +21,15 @@
         android:theme="@style/Theme.WhatsTheVIbe"
         tools:targetApi="31">
         <activity
+            android:name=".TestActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".ResultActivity"
             android:exported="false">
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

@@ -11,4 +11,28 @@
     <string name="answer4_text">Answer4</string>
     <string name="result_text">This is the Vibe!</string>
     <string name="restart_button_text">Restart</string>
+
+    <string-array name="Questions">
+        <item>How tired are you</item>
+        <item>Question2</item>
+    </string-array>
+
+    <string-array name="Answer1">
+        <item>Yes</item>
+        <item>No</item>
+        <item>Maybe</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="Answer2">
+        <item>Answer1</item>
+        <item>Answer2</item>
+        <item>Answer3</item>
+        <item>Answer4</item>
+    </string-array>
+
+    <array name= "AllAnswers">
+        <item>@array/Answer1</item>
+        <item>@array/Answer2</item>
+    </array>
+
 </resources>

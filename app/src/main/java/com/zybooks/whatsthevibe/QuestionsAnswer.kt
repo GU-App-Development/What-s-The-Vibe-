@@ -3,6 +3,13 @@ package com.zybooks.whatsthevibe
 import android.util.ArrayMap
 import java.util.stream.IntStream.range
 
+data class QuestionsandAnswers (
+    var id: Int = 0,
+    var Question : String = "",
+    var Answers: Array<String> = arrayOf("", "", "", "")
+){}
+
+
 class QuestionsAnswer{
 
     /*public var AllAnswers = arrayListOf(arrayListOf<String>())*/
