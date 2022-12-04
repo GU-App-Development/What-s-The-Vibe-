@@ -1,12 +1,15 @@
 package com.zybooks.whatsthevibe
 
 import android.util.ArrayMap
+import android.util.Log
 import java.util.stream.IntStream.range
 
 class QuestionsAnswer{
 
     /*public var AllAnswers = arrayListOf(arrayListOf<String>())*/
-    public var Questions = arrayListOf<String>()
+    var AllQuestions = arrayListOf<String>()
+    var QuestionsforQuiz = listOf<String>()
+    var AnswersforQuiz = mutableListOf(listOf<String>())
 
     val AllAnswers = arrayOf(
         arrayOf(
@@ -53,22 +56,35 @@ class QuestionsAnswer{
         ),
         arrayOf(
             "Instagram", "Twitter", "Facebook", "Other"
+        ),
+        arrayOf(
+            "11th Question", "11th Question", "11th Question", "11th Question"
         )
+
     )
 
     init {
 
-        Questions.add("How tired are you?")
-        Questions.add("Are you hungry?")
-        Questions.add("When did you go to bed last night?")
-        Questions.add("Do you need motivation right now?")
-        Questions.add("Do you like to sing along to music?")
-        Questions.add("What genre are you feeling right now?")
-        Questions.add("Are you feeling sad right now?")
-        Questions.add("How old are you?")
-        Questions.add("Are you feeling like listening to holiday music?")
-        Questions.add("What’s your favorite social media?")
+        AllQuestions.add("How tired are you?")
+        AllQuestions.add("Are you hungry?")
+        AllQuestions.add("When did you go to bed last night?")
+        AllQuestions.add("Do you need motivation right now?")
+        AllQuestions.add("Do you like to sing along to music?")
+        AllQuestions.add("What genre are you feeling right now?")
+        AllQuestions.add("Are you feeling sad right now?")
+        AllQuestions.add("How old are you?")
+        AllQuestions.add("Are you feeling like listening to holiday music?")
+        AllQuestions.add("What’s your favorite social media?")
+        AllQuestions.add("11th Question")
 
+        QuestionsforQuiz = AllQuestions.asSequence().shuffled().take(10).toList()
+        AnswersforQuiz.removeAt(0)
+        for (question in QuestionsforQuiz){
+            val currentIndex = AllQuestions.indexOf(question)
+            val currentAnswer = AllAnswers[currentIndex].toList()
+            AnswersforQuiz.add(currentAnswer)
+            Log.d("TAG", "Answers for Quiz at 0? $AnswersforQuiz")
+        }
 
 
         /*val AnswerQuestion1 = arrayOf(

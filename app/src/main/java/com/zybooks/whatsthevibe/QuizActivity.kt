@@ -34,12 +34,11 @@ class QuizActivity : AppCompatActivity() {
         Answer2 = findViewById(R.id.answer2)
         Answer3 = findViewById(R.id.answer3)
         Answer4 = findViewById(R.id.answer4)
-
-        QuestionText.setText(QuestionsAnswers.Questions[0])
-        Answer1.setText(QuestionsAnswers.AllAnswers[0][0])
-        Answer2.setText(QuestionsAnswers.AllAnswers[0][1])
-        Answer3.setText(QuestionsAnswers.AllAnswers[0][2])
-        Answer4.setText(QuestionsAnswers.AllAnswers[0][3])
+        QuestionText.setText(QuestionsAnswers.QuestionsforQuiz[0])
+        Answer1.setText(QuestionsAnswers.AnswersforQuiz[0][0])
+        Answer2.setText(QuestionsAnswers.AnswersforQuiz[0][1])
+        Answer3.setText(QuestionsAnswers.AnswersforQuiz[0][2])
+        Answer4.setText(QuestionsAnswers.AnswersforQuiz[0][3])
 
         nextButton = findViewById(R.id.next_button)
         nextButton.setOnClickListener{view: View ->
@@ -65,17 +64,17 @@ class QuizActivity : AppCompatActivity() {
             var currentLength = selectedAnswers.size
             if (selectedAnswers.size != 0) {
                 if (selectedAnswers[currentLength - 1] == currentAnswer && currentLength != 0) {
-                    currentAnswer = QuestionsAnswers.AllAnswers[currentLength][currentIndex]
+                    currentAnswer = QuestionsAnswers.AnswersforQuiz[currentLength][currentIndex]
                     Log.d("TAG", "Same button as last time, current answer is $currentAnswer")
                 }
             }
             selectedAnswers.add(currentAnswer)
             try {
-                QuestionText.setText(QuestionsAnswers.Questions[nextButtonClicks])
-                Answer1.setText(QuestionsAnswers.AllAnswers[nextButtonClicks][0])
-                Answer2.setText(QuestionsAnswers.AllAnswers[nextButtonClicks][1])
-                Answer3.setText(QuestionsAnswers.AllAnswers[nextButtonClicks][2])
-                Answer4.setText(QuestionsAnswers.AllAnswers[nextButtonClicks][3])
+                QuestionText.setText(QuestionsAnswers.QuestionsforQuiz[nextButtonClicks])
+                Answer1.setText(QuestionsAnswers.AnswersforQuiz[nextButtonClicks][0])
+                Answer2.setText(QuestionsAnswers.AnswersforQuiz[nextButtonClicks][1])
+                Answer3.setText(QuestionsAnswers.AnswersforQuiz[nextButtonClicks][2])
+                Answer4.setText(QuestionsAnswers.AnswersforQuiz[nextButtonClicks][3])
 
                 if (nextButtonClicks == 9) {
                     nextButton.setText("Get Results!")
@@ -91,10 +90,10 @@ class QuizActivity : AppCompatActivity() {
 
     private fun onAnswerSelected(view: View) {
         currentAnswer = when (view.id) {
-            R.id.answer1 -> QuestionsAnswers.AllAnswers[nextButtonClicks][0]
-            R.id.answer2 -> QuestionsAnswers.AllAnswers[nextButtonClicks][1]
-            R.id.answer3 -> QuestionsAnswers.AllAnswers[nextButtonClicks][2]
-            R.id.answer4 -> QuestionsAnswers.AllAnswers[nextButtonClicks][3]
+            R.id.answer1 -> QuestionsAnswers.AnswersforQuiz[nextButtonClicks][0]
+            R.id.answer2 -> QuestionsAnswers.AnswersforQuiz[nextButtonClicks][1]
+            R.id.answer3 -> QuestionsAnswers.AnswersforQuiz[nextButtonClicks][2]
+            R.id.answer4 -> QuestionsAnswers.AnswersforQuiz[nextButtonClicks][3]
             else -> "No Answer"
         }
 
@@ -107,12 +106,6 @@ class QuizActivity : AppCompatActivity() {
         }
 
         Log.d("Tag", "Current Answer in Selected $currentAnswer")
-    }
-
-
-    private fun nextQuestion(view: View){
-        selectedAnswers.add(currentAnswer)
-        // reset
     }
 
 
