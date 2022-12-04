@@ -12,14 +12,14 @@ class QuestionsAnswer{
     var AnswersforQuiz = mutableListOf(listOf<String>())
     var MoodsforQuiz = mutableListOf(listOf(listOf<String>()))
 
-    val HipHopMood : Int = 0
-    val CountryMood : Int = 0
-    val PopMood : Int = 0
-    val IndieMood : Int = 0
-    val HolidayMood : Int = 0
-    val ClassicRockMood : Int = 0
-    val JazzMood : Int = 0
-    val EDMMood : Int = 0
+    var HipHopMood : Int = 0
+    var CountryMood : Int = 0
+    var PopMood : Int = 0
+    var IndieMood : Int = 0
+    var HolidayMood : Int = 0
+    var ClassicRockMood : Int = 0
+    var JazzMood : Int = 0
+    var EDMMood : Int = 0
 
     val AllAnswers = arrayOf(
         arrayOf(

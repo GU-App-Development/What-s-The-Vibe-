@@ -21,14 +21,15 @@ class ResultActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
 
-        val allAnswers = intent.getStringArrayListExtra("All Answers")
-        Log.d("TAG", "All Answers in Result Activity $allAnswers")
         SongNameText = findViewById(R.id.song_name_text)
 
-        /*val values = (0.. 9).toList()
-        val randomIndex = values.random()*/
-        randomSong = SongPlaylistGeneratorObject.AllSongs[0]
+
+        val allAnswers = intent.getStringArrayListExtra("All Answers")
+        val genre = intent.getStringExtra("Genre")
+
+        randomSong = findSong(genre)
         SongNameText.setText(randomSong)
+        Log.d("TAG", "Selected Genre was... $genre")
 
         ShareButton = findViewById(R.id.share_button)
         ShareButton.setOnClickListener{view: View ->
@@ -38,6 +39,22 @@ class ResultActivity : AppCompatActivity() {
         RestartButton.setOnClickListener{view: View ->
             onRestartButtonClick(view)
         }
+    }
+
+    private fun findSong(Genre : String?): String {
+        val Song = when (Genre){
+            "Pop" -> SongPlaylistGeneratorObject.PopSongs.asSequence().shuffled().take(1).toList()
+            "Country" -> SongPlaylistGeneratorObject.CountrySongs.asSequence().shuffled().take(1).toList()
+            "ClassicRock" -> SongPlaylistGeneratorObject.ClassicRockSongs.asSequence().shuffled().take(1).toList()
+            "Indie" -> SongPlaylistGeneratorObject.IndieSongs.asSequence().shuffled().take(1).toList()
+            "Jazz" -> SongPlaylistGeneratorObject.JazzSongs.asSequence().shuffled().take(1).toList()
+            "EDM" -> SongPlaylistGeneratorObject.EDMSongs.asSequence().shuffled().take(1).toList()
+            "Holiday" -> SongPlaylistGeneratorObject.HolidaySongs.asSequence().shuffled().take(1).toList()
+            "HipHop" -> SongPlaylistGeneratorObject.HipHopSongs.asSequence().shuffled().take(1).toList()
+            else -> SongPlaylistGeneratorObject.PopSongs.asSequence().shuffled().take(1).toList()
+        }
+
+        return Song[0]
     }
 
     private fun onShareButtonClick(view: View){

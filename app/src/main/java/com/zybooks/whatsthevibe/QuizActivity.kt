@@ -22,6 +22,7 @@ class QuizActivity : AppCompatActivity() {
     private var nextButtonClicks : Int = 0
     private val QuestionsAnswers = QuestionsAnswer()
     private var currentIndex : Int = 0
+    private var AllMoodVals = mutableMapOf<String, Int>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,6 +70,10 @@ class QuizActivity : AppCompatActivity() {
                 }
             }
             selectedAnswers.add(currentAnswer)
+            val moodsForAnswers = QuestionsAnswers.MoodsforQuiz[currentLength][currentIndex]
+            attributeMoodValueforAnswer(moodsForAnswers)
+
+
             try {
                 QuestionText.setText(QuestionsAnswers.QuestionsforQuiz[nextButtonClicks])
                 Answer1.setText(QuestionsAnswers.AnswersforQuiz[nextButtonClicks][0])
@@ -80,10 +85,22 @@ class QuizActivity : AppCompatActivity() {
                     nextButton.setText("Get Results!")
                 }
             } catch (e: Exception) {
-                val intent = Intent(this, ResultActivity::class.java)
-                Log.d("TAG", "All Answers before result? $selectedAnswers")
-                intent.putExtra("All Answers", selectedAnswers)
-                startActivity(intent)
+                AllMoodVals["HipHop"] = QuestionsAnswers.HipHopMood
+                AllMoodVals["Indie"] = QuestionsAnswers.IndieMood
+                AllMoodVals["Pop"] = QuestionsAnswers.PopMood
+                AllMoodVals["Country"] = QuestionsAnswers.CountryMood
+                AllMoodVals["EDM"] = QuestionsAnswers.EDMMood
+                AllMoodVals["Jazz"] = QuestionsAnswers.JazzMood
+                AllMoodVals["ClassicRock"] = QuestionsAnswers.ClassicRockMood
+                AllMoodVals["Holiday"] = QuestionsAnswers.HolidayMood
+                val genreForSong = findHighestMoodVal(AllMoodVals)
+
+
+                Log.d("TAG", "Genre for Song: $genreForSong")
+                val resultIntent = Intent(this, ResultActivity::class.java)
+                resultIntent.putExtra("All Answers", selectedAnswers)
+                resultIntent.putExtra("Genre", genreForSong)
+                startActivity(resultIntent)
             }
         }
     }
@@ -107,6 +124,39 @@ class QuizActivity : AppCompatActivity() {
 
         Log.d("Tag", "Current Answer in Selected $currentAnswer")
     }
+    fun attributeMoodValueforAnswer(moodsForAnswer : List<String>){
+        if ("Indie" in moodsForAnswer){
+            QuestionsAnswers.IndieMood+= 1
+        }
+        if ("HipHop" in moodsForAnswer){
+            QuestionsAnswers.HipHopMood+= 1
+        }
+        if ("Country" in moodsForAnswer){
+            QuestionsAnswers.CountryMood+= 1
+        }
+        if ("Jazz" in moodsForAnswer){
+            QuestionsAnswers.JazzMood += 1
+        }
+        if ("EDM" in moodsForAnswer){
+            QuestionsAnswers.EDMMood += 1
+        }
+        if ("Pop" in moodsForAnswer){
+            QuestionsAnswers.PopMood += 1
+        }
+        if ("ClassicRock" in moodsForAnswer){
+            QuestionsAnswers.ClassicRockMood += 1
+        }
+        if ("Holiday" in moodsForAnswer){
+            QuestionsAnswers.HolidayMood += 1
+        }
+    }
 
+    fun findHighestMoodVal(AllMoodVals : MutableMap<String, Int>) : String?{
+        val max = AllMoodVals.maxByOrNull { it.value }
+        Log.d("TAG", "Genre??? $max")
+        val genre = max?.key
+
+        return genre
+    }
 
 }

@@ -32,35 +32,31 @@ class SongPlaylistGenerator {
     )
 
     val ClassicRockSongs = arrayOf(
-        ""
+        "Classic Rock Song"
     )
 
     val HipHopSongs = arrayOf(
-        ""
+        "Hip Hop Song"
     )
 
     val HolidaySongs = arrayOf(
-        ""
+        "Holiday Song"
     )
 
     val JazzSongs = arrayOf(
-        ""
+        "Jazz Song"
     )
 
     val EDMSongs = arrayOf(
-        ""
+        "EDM Song"
     )
 
     val RBSongs = arrayOf(
-        ""
+        "RB Song"
     )
 
     val PopSongs = arrayOf(
-        ""
-    )
-    val AllSongs = arrayOf(
-        "HotLine Bling - Drake",
-        "Let it Be - The Beatles"
+        "Pop Song"
     )
 
 }
