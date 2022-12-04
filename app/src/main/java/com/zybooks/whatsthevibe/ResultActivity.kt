@@ -21,9 +21,9 @@ class ResultActivity : AppCompatActivity() {
         setContentView(R.layout.activity_result)
 
         SongNameText = findViewById(R.id.song_name_text)
-        val values = (0.. 9).toList()
-        val randomIndex = values.random()
-        randomSong = SongPlaylistGeneratorObject.AllSongs[randomIndex]
+        /*val values = (0.. 9).toList()
+        val randomIndex = values.random()*/
+        randomSong = SongPlaylistGeneratorObject.AllSongs[0]
         SongNameText.setText(randomSong)
 
         ShareButton = findViewById(R.id.share_button)

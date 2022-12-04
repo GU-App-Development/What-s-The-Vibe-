@@ -3,6 +3,7 @@ package com.zybooks.whatsthevibe
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.core.view.children
@@ -11,7 +12,7 @@ class QuizActivity : AppCompatActivity() {
 
     private lateinit var answerRadioGroup : RadioGroup
     private lateinit var nextButton : Button
-    private lateinit var currentAnswer : String
+    private var currentAnswer : String = "No Answer"
     private lateinit var QuestionText : TextView
     private lateinit var Answer1 : RadioButton
     private lateinit var Answer2 : RadioButton
@@ -20,6 +21,7 @@ class QuizActivity : AppCompatActivity() {
     private var selectedAnswers = arrayListOf<String>()
     private var nextButtonClicks : Int = 0
     private val QuestionsAnswers = QuestionsAnswer()
+    private var currentIndex : Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,32 +56,55 @@ class QuizActivity : AppCompatActivity() {
 
     private fun onNextClick(view: View){
         // make sure an answer is selected before we refresh activity!
-        nextButtonClicks++
-        try {
-            QuestionText.setText(QuestionsAnswers.Questions[nextButtonClicks])
-            Answer1.setText(QuestionsAnswers.AllAnswers[nextButtonClicks][0])
-            Answer2.setText(QuestionsAnswers.AllAnswers[nextButtonClicks][1])
-            Answer3.setText(QuestionsAnswers.AllAnswers[nextButtonClicks][2])
-            Answer4.setText(QuestionsAnswers.AllAnswers[nextButtonClicks][3])
-
-            if (nextButtonClicks == 9){
-                nextButton.setText("Get Results!")
-            }
+        Log.d("Tag", "Current Answer in Next Button $currentAnswer")
+        if (currentAnswer == "No Answer"){
+            Toast.makeText(this, "Please Select An Answer", Toast.LENGTH_SHORT).show()
         }
-        catch(e: Exception){
-            val intent = Intent(this, ResultActivity::class.java)
-            startActivity(intent)
+        else {
+            nextButtonClicks++
+            var currentLength = selectedAnswers.size
+            if (selectedAnswers.size != 0) {
+                if (selectedAnswers[currentLength - 1] == currentAnswer && currentLength != 0) {
+                    currentAnswer = QuestionsAnswers.AllAnswers[currentLength][currentIndex]
+                    Log.d("TAG", "Same button as last time, current answer is $currentAnswer")
+                }
+            }
+            selectedAnswers.add(currentAnswer)
+            try {
+                QuestionText.setText(QuestionsAnswers.Questions[nextButtonClicks])
+                Answer1.setText(QuestionsAnswers.AllAnswers[nextButtonClicks][0])
+                Answer2.setText(QuestionsAnswers.AllAnswers[nextButtonClicks][1])
+                Answer3.setText(QuestionsAnswers.AllAnswers[nextButtonClicks][2])
+                Answer4.setText(QuestionsAnswers.AllAnswers[nextButtonClicks][3])
+
+                if (nextButtonClicks == 9) {
+                    nextButton.setText("Get Results!")
+                }
+            } catch (e: Exception) {
+                val intent = Intent(this, ResultActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 
     private fun onAnswerSelected(view: View) {
         currentAnswer = when (view.id) {
-            R.id.answer1 -> "Answer1"
-            R.id.answer2 -> "Answer2"
-            R.id.answer3 -> "Answer3"
-            R.id.answer4 -> "Answer4"
+            R.id.answer1 -> QuestionsAnswers.AllAnswers[nextButtonClicks][0]
+            R.id.answer2 -> QuestionsAnswers.AllAnswers[nextButtonClicks][1]
+            R.id.answer3 -> QuestionsAnswers.AllAnswers[nextButtonClicks][2]
+            R.id.answer4 -> QuestionsAnswers.AllAnswers[nextButtonClicks][3]
             else -> "No Answer"
         }
+
+        currentIndex = when(view.id){
+            R.id.answer1 -> 0
+            R.id.answer2 -> 1
+            R.id.answer3 -> 2
+            R.id.answer4 -> 3
+            else -> 0
+        }
+
+        Log.d("Tag", "Current Answer in Selected $currentAnswer")
     }
 
 

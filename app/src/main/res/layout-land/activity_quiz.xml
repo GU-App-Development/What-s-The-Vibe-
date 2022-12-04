@@ -18,7 +18,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="100dp"
         />
     <RadioGroup
         android:id="@+id/answer_radio_group"
@@ -27,18 +26,17 @@
         android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@id/question_text"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="50dp">
+        app:layout_constraintRight_toRightOf="parent">
 
         <RadioButton android:id="@+id/answer1"
-            style="@style/question_buttons_portrait"
+            style="@style/question_buttons_landscape"
             android:layout_width="match_parent"
             android:textColor="@color/white"
             android:layout_height="wrap_content"
             android:text="@string/answer1_text"/>
 
         <RadioButton android:id="@+id/answer2"
-            style="@style/question_buttons_portrait"
+            style="@style/question_buttons_landscape"
             android:layout_width="match_parent"
             android:textColor="@color/white"
             android:layout_height="wrap_content"
@@ -46,19 +44,18 @@
             />
 
         <RadioButton android:id="@+id/answer3"
-            style="@style/question_buttons_portrait"
+            style="@style/question_buttons_landscape"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:text="@string/answer3_text"/>
 
         <RadioButton android:id="@+id/answer4"
-            style="@style/question_buttons_portrait"
+            style="@style/question_buttons_landscape"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:text="@string/answer4_text"
-            android:textSize="18sp"/>
+            android:text="@string/answer4_text"/>
 
     </RadioGroup>
 
@@ -70,7 +67,6 @@
         app:layout_constraintTop_toBottomOf="@id/answer_radio_group"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:textSize="30sp"
-        android:layout_marginTop="30dp"/>
+        android:textSize="15sp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

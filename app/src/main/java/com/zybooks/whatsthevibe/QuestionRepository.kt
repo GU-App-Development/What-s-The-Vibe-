@@ -1,34 +1,35 @@
+
 package com.zybooks.whatsthevibe
-
-import android.R
+/*
 import android.content.Context
+import android.content.res.Resources
+import android.util.Log
 
 
-class QuestionRepository private constructor(context: Context) {
+class QuestionRepository private constructor() {
 
-    var bandList: MutableList<QuestionsandAnswers> = mutableListOf()
+    var questionAnswerList: MutableList<QuestionsandAnswers> = mutableListOf()
 
     companion object {
         private var instance: QuestionRepository? = null
 
-        fun getInstance(context: Context): QuestionRepository {
-            if (instance == null) {
-                instance = QuestionRepository(context)
-            }
-            return instance!!
-        }
     }
 
     init {
-        val Questions = context.resources.getStringArray(R.array.Questions)
+
+        val res : Resources = resources
+        val Questions = g.getStringArray(R.array.Questions)
+
         val AllAnswers = context.resources.getStringArray(R.array.AllAnswers)
         for (i in Questions.indices) {
-             val temp = AllAnswers[0]
-            bandList.add(QuestionsandAnswers(i + 1, Questions[i], AllAnswers[i]))
+            val AnswersPerQuestion = AllAnswers.take(4)
+            AllAnswers.drop(4)
+            questionAnswerList.add(QuestionsandAnswers(i + 1, Questions[i], AnswersPerQuestion))
+            Log.d("TAG", questionAnswerList[i].Answers[1])
         }
     }
 
     fun getBand(bandId: Int): QuestionsandAnswers? {
-        return bandList.find { it.id == bandId }
+        return questionAnswerList.find { it.id == bandId }
     }
-}
+}*/
