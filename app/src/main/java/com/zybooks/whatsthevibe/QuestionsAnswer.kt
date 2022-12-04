@@ -53,9 +53,6 @@ class QuestionsAnswer{
             "Rap", "Something up-beat"
         ),
         arrayOf(
-            "Yeah...", "Nah I'm good!", "Maybe a little", "Not really"
-        ),
-        arrayOf(
             "16-21", "22-30", "31-45", "46+"
         ),
         arrayOf(
@@ -68,7 +65,10 @@ class QuestionsAnswer{
             "Instagram", "Twitter", "Facebook", "Other"
         ),
         arrayOf(
-            "11th Question", "11th Question", "11th Question", "11th Question"
+            "Gym", "Home", "School", "Other"
+        ),
+        arrayOf(
+            "Headphones", "Laptop", "Speakers", "Other"
         ))
     // add Questions here
 
@@ -111,12 +111,6 @@ class QuestionsAnswer{
                 listOf("Pop", "EDM")
             ),
             listOf(
-                listOf("Indie", "Country"),
-                listOf("Pop", "HipHop", "EDM"),
-                listOf("Indie", "Pop", "HipHop", "ClassicRock"),
-                listOf("Pop", "HipHop", "ClassicRock")
-            ),
-            listOf(
                 listOf("Indie", "Pop", "HipHop"),
                 listOf("Indie", "Pop", "HipHop"),
                 listOf("Jazz", "ClassicRock", "Pop"),
@@ -135,10 +129,16 @@ class QuestionsAnswer{
                 listOf("NA")
             ),
             listOf(
-                listOf("N/A"),
-                listOf("N/A"),
-                listOf("N/A"),
+                listOf("EDM", "HipHop", "Pop"),
+                listOf("Pop", "ClassicRock", "Jazz", "Country", "Indie"),
+                listOf("Indie", "Jazz"),
                 listOf("N/A")
+            ),
+            listOf(
+                listOf("Jazz", "ClassicRock", "HipHop", "Indie"),
+                listOf("Pop", "HipHop"),
+                listOf("Pop", "HipHop", "ClassicRock", "Country"),
+                listOf("N/A"),
             )
         )
 
@@ -151,11 +151,11 @@ class QuestionsAnswer{
         AllQuestions.add("Do you need motivation right now?")
         AllQuestions.add("Do you like to sing along to music?")
         AllQuestions.add("What genre are you feeling right now?")
-        AllQuestions.add("Are you feeling sad right now?")
         AllQuestions.add("How old are you?")
         AllQuestions.add("Are you feeling like listening to holiday music?")
         AllQuestions.add("What’s your favorite social media?")
-        AllQuestions.add("11th Question")
+        AllQuestions.add("Where are you right now?")
+        AllQuestions.add("What are you listening to music with right now?")
 
         QuestionsforQuiz = AllQuestions.asSequence().shuffled().take(10).toList()
         AnswersforQuiz.removeAt(0)
