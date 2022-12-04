@@ -10,6 +10,16 @@ class QuestionsAnswer{
     var AllQuestions = arrayListOf<String>()
     var QuestionsforQuiz = listOf<String>()
     var AnswersforQuiz = mutableListOf(listOf<String>())
+    var MoodsforQuiz = mutableListOf(listOf(listOf<String>()))
+
+    val HipHopMood : Int = 0
+    val CountryMood : Int = 0
+    val PopMood : Int = 0
+    val IndieMood : Int = 0
+    val HolidayMood : Int = 0
+    val ClassicRockMood : Int = 0
+    val JazzMood : Int = 0
+    val EDMMood : Int = 0
 
     val AllAnswers = arrayOf(
         arrayOf(
@@ -36,10 +46,10 @@ class QuestionsAnswer{
             "Yes!",
             "Not Really",
             "I'm just trying to chill right now",
-            "I guess so"
+            "A little"
         ),
         arrayOf(
-            "Give me some throwbacks!", "Something lowkey I can chill too, maybe a little sad",
+            "Give me some throwbacks!", "Something lowkey",
             "Rap", "Something up-beat"
         ),
         arrayOf(
@@ -59,9 +69,79 @@ class QuestionsAnswer{
         ),
         arrayOf(
             "11th Question", "11th Question", "11th Question", "11th Question"
+        ))
+    // add Questions here
+
+        // moods parallel to answers
+        val allMoodsForAnswer = listOf(
+            listOf(
+                listOf("Indie", "Jazz"), // for "I'm sooooo tired"
+                listOf("EDM", "HipHop", "Pop"), // for "I could go on a run right now"
+                listOf("N/A"), // for 50/50
+                listOf("ClassicRock") // for "I'm feelin alright"
+            ),
+            listOf(
+                listOf("Jazz", "Indie"),
+                listOf("EDM", "HipHop"),
+                listOf("Pop", "Country"),
+                listOf("Indie", "Jazz")
+            ),
+            listOf(
+                listOf("ClassicRock", "Jazz"),
+                listOf("Indie", "ClassicRock", "Pop"),
+                listOf("HipHop", "EDM", "Pop"),
+                listOf("N/A")
+            ),
+            listOf(
+                listOf("EDM", "HipHop", "Pop"),
+                listOf("Indie", "ClassicRock", "Jazz", "Country", "Pop"),
+                listOf("HipHop", "Pop"),
+                listOf("Indie", "Jazz", "Country")
+            ),
+            listOf(
+                listOf("Country", "Pop", "ClassicRock"),
+                listOf("Jazz", "Indie", "EDM"),
+                listOf("Indie", "Jazz"),
+                listOf("ClassicRock", "Pop")
+            ),
+            listOf(
+                listOf("ClassicRock"),
+                listOf("Indie", "Country"),
+                listOf("HipHop"),
+                listOf("Pop", "EDM")
+            ),
+            listOf(
+                listOf("Indie", "Country"),
+                listOf("Pop", "HipHop", "EDM"),
+                listOf("Indie", "Pop", "HipHop", "ClassicRock"),
+                listOf("Pop", "HipHop", "ClassicRock")
+            ),
+            listOf(
+                listOf("Indie", "Pop", "HipHop"),
+                listOf("Indie", "Pop", "HipHop"),
+                listOf("Jazz", "ClassicRock", "Pop"),
+                listOf("Jazz", "ClassicRock")
+            ),
+            listOf(
+                listOf("N/A"),
+                listOf("Holiday"),
+                listOf("Holiday"),
+                listOf("N/A")
+            ),
+            listOf(
+                listOf("Pop", "Indie", "HipHop", "EDM"),
+                listOf("HipHop", "Indie"),
+                listOf("Jazz", "ClassicRock", "Country"),
+                listOf("NA")
+            ),
+            listOf(
+                listOf("N/A"),
+                listOf("N/A"),
+                listOf("N/A"),
+                listOf("N/A")
+            )
         )
 
-    )
 
     init {
 
@@ -79,11 +159,18 @@ class QuestionsAnswer{
 
         QuestionsforQuiz = AllQuestions.asSequence().shuffled().take(10).toList()
         AnswersforQuiz.removeAt(0)
+        MoodsforQuiz.removeAt(0)
+        var quizIndex = 0
         for (question in QuestionsforQuiz){
             val currentIndex = AllQuestions.indexOf(question)
             val currentAnswer = AllAnswers[currentIndex].toList()
+            val currentMoods = allMoodsForAnswer[currentIndex]
             AnswersforQuiz.add(currentAnswer)
-            Log.d("TAG", "Answers for Quiz at 0? $AnswersforQuiz")
+            MoodsforQuiz.add(currentMoods)
+            Log.d("TAG", "Question for Quiz: ${QuestionsforQuiz[quizIndex]}")
+            Log.d("TAG", "Mood for Question: $currentMoods")
+            Log.d("TAG", "All Moods: $MoodsforQuiz")
+            quizIndex++
         }
 
 
