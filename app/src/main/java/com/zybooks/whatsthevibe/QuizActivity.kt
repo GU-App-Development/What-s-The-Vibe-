@@ -82,6 +82,8 @@ class QuizActivity : AppCompatActivity() {
                 }
             } catch (e: Exception) {
                 val intent = Intent(this, ResultActivity::class.java)
+                Log.d("TAG", "All Answers before result? $selectedAnswers")
+                intent.putExtra("All Answers", selectedAnswers)
                 startActivity(intent)
             }
         }

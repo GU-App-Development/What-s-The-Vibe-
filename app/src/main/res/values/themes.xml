@@ -31,6 +31,9 @@
     <style name="question_text">
         <item name="android:textSize">30sp</item>
     </style>
+    <style name="question_text_landscape">
+        <item name="android:textSize">20sp</item>
+    </style>
 
     <style name="question_buttons_portrait">
         <item name="android:textSize">18sp</item>
