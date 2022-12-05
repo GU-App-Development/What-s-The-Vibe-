@@ -11,6 +11,8 @@
     <string name="answer4_text">Answer4</string>
     <string name="result_text">This is the Vibe!</string>
     <string name="restart_button_text">Restart</string>
+    <string name="question_mark">\?</string>
+    <string name="back">Back</string>
 
     <string-array name="Questions">
         <item>How tired are you</item>

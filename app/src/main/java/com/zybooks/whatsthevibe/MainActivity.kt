@@ -12,6 +12,7 @@ import java.security.AccessController.getContext
 class MainActivity : AppCompatActivity() {
 
     private lateinit var beginButton : Button
+    private lateinit var helpButton : Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,6 +21,12 @@ class MainActivity : AppCompatActivity() {
         beginButton = findViewById(R.id.begin_button)
         beginButton.setOnClickListener{view: View ->
             val intent = Intent(this, QuizActivity::class.java)
+            startActivity(intent)
+        }
+
+        helpButton = findViewById(R.id.help_button)
+        helpButton.setOnClickListener{view: View ->
+            val intent = Intent(this, HelpActivity::class.java)
             startActivity(intent)
         }
     }
