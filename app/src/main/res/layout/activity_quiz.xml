@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/padding"
-    android:background="@color/purple_200"
+    android:background="@drawable/gradient_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".QuizActivity"
@@ -31,35 +31,42 @@
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="50dp">
 
-        <RadioButton android:id="@+id/answer1"
+        <RadioButton
+            android:id="@+id/answer1"
             style="@style/question_buttons_portrait"
             android:layout_width="match_parent"
-            android:textColor="@color/white"
             android:layout_height="wrap_content"
-            android:text="@string/answer1_text"/>
+            android:minHeight="48dp"
+            android:text="@string/answer1_text"
+            android:textColor="@color/white" />
 
-        <RadioButton android:id="@+id/answer2"
+        <RadioButton
+            android:id="@+id/answer2"
             style="@style/question_buttons_portrait"
             android:layout_width="match_parent"
-            android:textColor="@color/white"
             android:layout_height="wrap_content"
+            android:minHeight="48dp"
             android:text="@string/answer2_text"
-            />
+            android:textColor="@color/white" />
 
-        <RadioButton android:id="@+id/answer3"
+        <RadioButton
+            android:id="@+id/answer3"
             style="@style/question_buttons_portrait"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:text="@string/answer3_text"/>
+            android:minHeight="48dp"
+            android:text="@string/answer3_text"
+            android:textColor="@color/white" />
 
-        <RadioButton android:id="@+id/answer4"
+        <RadioButton
+            android:id="@+id/answer4"
             style="@style/question_buttons_portrait"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            android:minHeight="48dp"
             android:text="@string/answer4_text"
-            android:textSize="18sp"/>
+            android:textColor="@color/white"
+            android:textSize="18sp" />
 
     </RadioGroup>
 
