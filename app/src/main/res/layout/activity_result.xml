@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/padding"
     android:layout_width="match_parent"
-    android:background="@color/purple_200"
+    android:background="@drawable/gradient_background"
     android:layout_height="match_parent"
     tools:context=".ResultActivity">
 
@@ -19,6 +19,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        android:fontFamily="@font/fredoka_one"
         android:layout_marginTop="100dp"
         />
 
@@ -35,6 +36,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="100dp"
+        android:fontFamily="@font/fredoka_one"
         />
     <Button
         android:id="@+id/share_button"
@@ -45,6 +47,7 @@
         app:layout_constraintTop_toBottomOf="@id/song_name_text"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        android:fontFamily="@font/fredoka_one"
         android:layout_marginTop="50dp"/>
 
     <Button
@@ -56,6 +59,7 @@
         app:layout_constraintTop_toBottomOf="@id/share_button"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        android:fontFamily="@font/fredoka_one"
         android:layout_marginTop="60dp"/>
 
 

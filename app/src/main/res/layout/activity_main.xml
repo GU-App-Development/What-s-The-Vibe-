@@ -20,7 +20,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:textAlignment="center"
-        android:fontFamily="@font/dancing_script"
+        android:fontFamily="@font/fredoka_one"
         android:layout_marginTop="100dp"/>
 
     <Button
@@ -29,6 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/begin_button_text"
+        android:fontFamily="@font/fredoka_one"
         app:layout_constraintTop_toBottomOf="@id/welcome_text"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
