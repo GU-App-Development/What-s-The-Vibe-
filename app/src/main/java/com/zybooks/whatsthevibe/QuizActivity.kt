@@ -147,7 +147,7 @@ class QuizActivity : AppCompatActivity() {
             QuestionsAnswers.ClassicRockMood += 1
         }
         if ("Holiday" in moodsForAnswer){
-            QuestionsAnswers.HolidayMood += 1
+            QuestionsAnswers.HolidayMood += 20
         }
     }
 

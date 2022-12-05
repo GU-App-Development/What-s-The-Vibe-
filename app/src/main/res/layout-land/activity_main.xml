@@ -33,5 +33,18 @@
         app:layout_constraintRight_toRightOf="parent"
         android:fontFamily="@font/fredoka_one"
         android:layout_marginTop="70dp"/>
+    <Button
+        android:id="@+id/help_button"
+        android:layout_height="50dp"
+        android:layout_width="50dp"
+        android:text="@string/question_mark"
+        android:fontFamily="@font/fredoka_one"
+        app:layout_constraintTop_toBottomOf="@id/begin_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="600dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/rounded_button"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

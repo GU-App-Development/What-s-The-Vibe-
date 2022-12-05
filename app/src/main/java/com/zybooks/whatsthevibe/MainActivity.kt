@@ -20,14 +20,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         beginButton = findViewById(R.id.begin_button)
         beginButton.setOnClickListener{view: View ->
-            val intent = Intent(this, QuizActivity::class.java)
-            startActivity(intent)
+            val quizIntent = Intent(this, QuizActivity::class.java)
+            startActivity(quizIntent)
         }
 
         helpButton = findViewById(R.id.help_button)
         helpButton.setOnClickListener{view: View ->
-            val intent = Intent(this, HelpActivity::class.java)
-            startActivity(intent)
+            val helpIntent = Intent(this, HelpActivity::class.java)
+            startActivity(helpIntent)
         }
     }
 }

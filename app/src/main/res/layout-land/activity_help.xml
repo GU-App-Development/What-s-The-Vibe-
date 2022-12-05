@@ -15,38 +15,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:text="@string/welcome_message"
+        android:textSize="25sp"
+        android:text="If you're looking for new music, just fill out this questionaire, and we'll give you a song!"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:textAlignment="center"
         android:fontFamily="@font/fredoka_one"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginTop="50dp"/>
 
     <Button
-        android:id="@+id/begin_button"
+        android:id="@+id/back_button"
         style="@style/begin_button_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/begin_button_text"
+        android:text="@string/back"
         android:fontFamily="@font/fredoka_one"
         app:layout_constraintTop_toBottomOf="@id/welcome_text"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="150dp"/>
+        android:layout_marginTop="60dp"/>
 
-    <Button
-        android:id="@+id/help_button"
-        android:layout_height="50dp"
-        android:layout_width="50dp"
-        android:text="@string/question_mark"
-        android:fontFamily="@font/fredoka_one"
-        app:layout_constraintTop_toBottomOf="@id/begin_button"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="260dp"
-        android:layout_marginTop="160dp"
-        android:background="@drawable/rounded_button"
-        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
