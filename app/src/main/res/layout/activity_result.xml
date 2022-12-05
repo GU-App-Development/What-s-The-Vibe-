@@ -20,8 +20,18 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:fontFamily="@font/fredoka_one"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="25dp"
         />
+
+    <ImageView
+        android:id="@+id/result_image"
+        android:layout_width="500px"
+        android:layout_height="500px"
+        app:layout_constraintTop_toBottomOf="@id/result_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/basic_image" />
 
 
     <TextView
@@ -32,10 +42,10 @@
         android:text="Playlist/Song Name..."
         android:textAlignment="center"
         android:textSize="37sp"
-        app:layout_constraintTop_toBottomOf="@id/result_text"
+        app:layout_constraintTop_toBottomOf="@id/result_image"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="25dp"
         android:fontFamily="@font/fredoka_one"
         />
     <Button
@@ -48,7 +58,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:fontFamily="@font/fredoka_one"
-        android:layout_marginTop="50dp"/>
+        android:layout_marginTop="25dp"/>
 
     <Button
         android:id="@+id/restart_button"
@@ -60,7 +70,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:fontFamily="@font/fredoka_one"
-        android:layout_marginTop="60dp"/>
+        android:layout_marginTop="25dp"/>
 
 
 
