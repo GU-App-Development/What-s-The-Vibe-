@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/padding"
-    android:background="@color/purple_200"
+    android:background="@drawable/gradient_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
@@ -19,6 +19,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        android:fontFamily="@font/fredoka_one"
         android:layout_marginTop="20dp"/>
 
     <Button
@@ -30,6 +31,7 @@
         app:layout_constraintTop_toBottomOf="@id/welcome_text"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        android:fontFamily="@font/fredoka_one"
         android:layout_marginTop="70dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
