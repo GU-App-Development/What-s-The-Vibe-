@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:textSize="40dp"
-        android:text="If you're looking for new music, just fill out this questionaire, and we'll give you a song!"
+        android:text="If you're looking for new music, just fill out this questionnaire, and we'll give you a song!"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
