@@ -58,8 +58,8 @@ class SongPlaylistGenerator {
                 "RELENTLESS by Gunna, Lil Uzi Vert",
                 "Trick by Saweetie",
                 "Knock Knock by SoFaygo",
-                "Kickback by Kblast"
-
+                "Kickback by Kblast",
+                "Hotline Bling - Drake"
     )
 
     val HolidaySongs = arrayOf(
